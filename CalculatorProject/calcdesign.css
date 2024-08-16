@@ -1,0 +1,10 @@
+﻿body {
+    border:3px solid red ;
+    background-color:palevioletred;
+}
+#d1{
+    border:1px solid red;
+    height:340px;
+    width:340px;
+}
+

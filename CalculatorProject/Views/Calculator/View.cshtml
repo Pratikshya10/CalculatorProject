@@ -1,0 +1,73 @@
+﻿<style>
+    body {
+        background-color: palevioletred;
+    }
+    #d1 {
+        margin:60px;
+        border: 1px solid black;
+        height: 450px;
+        width: 340px;
+    }
+</style>
+
+<center>
+    <div id="d1">
+        @using (Html.BeginForm("Index", "Calculator"))
+        {
+            <table style="height:25%;border:thick">
+                <tr>
+                    <td colspan="4">
+                        <center>
+                            <h2>My Calculator</h2>
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        @Html.TextBox("txt", (string)ViewBag.result)
+                    </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" id="b7" value="7" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="b8" value="8" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="b9" value="9" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="div" value="/" style="height:40px;width:75px" /> </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" id="b4" value="4" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="b5" value="5" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="b6" value="6" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="multy" value="*" style="height:40px;width:75px" /> </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" id="b1" value="1" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="b2" value="2" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="b3" value="3" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="sub" value="-" style="height:40px;width:75px" /> </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" id="b0" value="0" style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="dot" value="." style="height:40px;width:75px" /> </td>
+                    <td> <input type="button" id="add" value="+" style="height:40px;width:75px" /> </td>
+                    <td> <input type="submit" id="eq" value="=" style="height:40px;width:75px" /> </td>
+                </tr>
+                <tr>
+                    <td colspan="2"> <input type="button" id="ce" value="CE" style="height:40px;width:155px" /> </td>
+                    <td colspan="2"> <input type="reset" id="re" value="Clear" style="height:40px;width:155px" /> </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <center>
+                            <h2>Result : @ViewBag.result</h2>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</center>
+@if (ViewBag.flag == 0)
+{
+    Response.Write("<script>alert('Right value is missing.')</script>");
+}
+
